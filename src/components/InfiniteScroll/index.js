@@ -12,13 +12,13 @@ const InfiniteScrollPage = () => {
 	}, []);
 
 	return (
-		<div className="infinte-scroll">
+		<>
 			{WORDING.map((w, i) => (
 				<p key={i} data-text={w}>
 					{w}
 				</p>
 			))}
-		</div>
+		</>
 	);
 };
 

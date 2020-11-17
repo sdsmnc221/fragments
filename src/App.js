@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import InfiniteScroll from './components/InfiniteScroll';
 import VariableFont from './components/VariableFont';
-import A from './components/A';
-import B from './components/B';
 
 const App = () => (
 	<Router>
@@ -22,7 +20,7 @@ const App = () => (
 		<main>
 			<Switch>
 				<Route path="/infinite-scroll">
-					<InfiniteScroll />
+					<p>Infinite scroll</p>
 				</Route>
 				<Route path="/variable-font">
 					<VariableFont />
