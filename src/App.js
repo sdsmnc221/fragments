@@ -1,70 +1,35 @@
-import React, { useRef, useEffect } from 'react';
-import charming from 'charming';
-import gsap from 'gsap';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import InfiniteScroll from './components/InfiniteScroll';
+import VariableFont from './components/VariableFont';
+import A from './components/A';
+import B from './components/B';
 
-// const { random } = gsap.utils;
+const App = () => (
+	<Router>
+		<nav>
+			<ul>
+				<li>
+					<Link to="/infinite-scroll">Infinite Scroll</Link>
+				</li>
+				<li>
+					<Link to="/variable-font">Variable Font</Link>
+				</li>
+			</ul>
+		</nav>
 
-// // // `rgb(${random(0, 255, 1)}, ${random(0, 255, 1)}, ${random(0,255,)})`
-
-const WORDING = [
-	'We',
-	'take',
-	'strange',
-	'things',
-	'to',
-	'feel',
-	'normal,',
-	'to',
-	'feel',
-	'normal,',
-	'to',
-	'feel',
-	'normal',
-];
-
-const App = () => {
-	// const textRef = useRef(null);
-	// const tl = gsap.timeline({ yoyo: true, repeat: -1, delay: 0 });
-
-	// useEffect(() => {
-	// if (textRef.current) {
-	// charming(textRef.current, { setClassName: () => 'char' });
-	// tl.to('.char', {
-	// 	fontWeight: 100,
-	// 	fontStretch: '10%',
-	// 	fontVariationSettings: `'wght'900, 'wdth'100`,
-	// 	marginLeft: 10,
-	// 	color: 'red',
-	// 	ease: 'sine.inOut',
-	// 	duration: random(0.2, 0.8),
-	// 	stagger: {
-	// 		each: 0.08,
-	// 		from: 'center',
-	// 		// yoyo: true,
-	// 		// repeat: -1,
-	// 	},
-	// });
-	// }
-	// }, [textRef]);
-
-	useEffect(() => {
-		new InfiniteScroll('.app', 'p');
-	}, []);
-
-	return (
-		// <>
-		// 	<p ref={textRef}>{WORDING.join(' )}</p>
-		// </>
-		<>
-			{WORDING.map((w, i) => (
-				<p key={i} data-text={w}>
-					{w}
-				</p>
-			))}
-		</>
-	);
-};
+		<main>
+			<Switch>
+				<Route path="/infinite-scroll">
+					<InfiniteScroll />
+				</Route>
+				<Route path="/variable-font">
+					<VariableFont />
+				</Route>
+			</Switch>
+		</main>
+	</Router>
+);
 
 export default App;
