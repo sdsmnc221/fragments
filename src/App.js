@@ -3,11 +3,15 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import InfiniteScroll from './components/InfiniteScroll';
 import VariableFont from './components/VariableFont';
+import Blob from './components//Blob';
 
 const App = () => (
 	<Router>
 		<nav>
 			<ul>
+				<li>
+					<Link to="/blob">Blob</Link>
+				</li>
 				<li>
 					<Link to="/infinite-scroll">Infinite Scroll</Link>
 				</li>
@@ -24,6 +28,9 @@ const App = () => (
 				</Route>
 				<Route path="/variable-font">
 					<VariableFont />
+				</Route>
+				<Route path="/blob">
+					<Blob />
 				</Route>
 			</Switch>
 		</main>
