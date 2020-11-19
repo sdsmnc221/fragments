@@ -15,8 +15,8 @@
 		left: 0;
 		pointer-events: none;
 		z-index: 3;
-		background-image: url('./assets/images/pills.jpg');
-		background-size: cover;
+		background-image: url('./assets/images/smoke.jpg');
+		background-position: top center;
 		background-position: center;
 		animation: blobRadius 6s ease-in-out infinite both, movement 24s ease-in-out infinite both;
 		mix-blend-mode: difference;
@@ -31,11 +31,13 @@
 			pointer-events: none;
 			z-index: 2;
 			@include size(120%, 120%);	
-			background-image: url('./assets/images/smoke.jpg');
+			background-image: url('./assets/images/pills.jpg');
+			background-repeat: no-repeat;
 			background-size: cover;
-			background-position: center;
+			background-attachment: fixed !important;
+			border-radius: 300px;
 			animation: blobRadius 2s ease-in-out infinite both, movement 24s ease-in-out infinite both;
-			mix-blend-mode: multiply;
+			mix-blend-mode: difference;
 		}
 
 		&::before {
